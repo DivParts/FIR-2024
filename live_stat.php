@@ -7,6 +7,8 @@
 
 <div class='refreschTop'>
     <?php
+        $koek = $_COOKIE["key"];
+
         $status = file_get_contents('https://rest.freeinternetradio.nl/STATUS.txt', true);
         $_SESSION['status'] = $status;
 
@@ -121,7 +123,7 @@
                     //echo "<div id='on' style='display: $dontShow'>";
                     echo "LIVE DJ <BR/> Wilbert <BR/>";
                     echo "<button class='button verzoekBtn bgBleu' title='Stuur een bericht naar de DJ'><i class='bi bi-chat-dots'></i></button>";
-                    echo "<button class='button videoBtn bgOrange' title='Kijk in de studio LIVE'><i class='bi bi-camera-video'></i></button>";
+                    //echo "<button class='button videoBtn bgOrange' title='Kijk in de studio LIVE'><i class='bi bi-camera-video'></i></button>";
                     echo "<button class='button bgGreen appBtn' title='Bel de DJ via 085-0601111'><i class='bi bi-telephone'></i></button>";
                 break;
                 case "Walter":
@@ -176,7 +178,7 @@
         }
             ?> 
                 </div>
-                <div class="stream" id="playAudioBtn" style="display:<?php echo $_COOKIE["key"]; ?> ">
+                <div class="stream" id="playAudioBtn" style="display:<?php echo $koek; ?> ">
                     <span title="klik en Luister naar Free Internet Radio "><i class="bi-play-fill"></i></span>
                 </div>
 
